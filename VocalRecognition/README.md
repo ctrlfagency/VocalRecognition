@@ -8,7 +8,7 @@ $ git clone https://github.com/ctrlfagency/VocalRecognition.git ctrlfagency
 
 ```
 ## Project 
-
+```sh
 ├── AndroidManifest.xml
 ├── assets
 │   ├── index.html
@@ -60,7 +60,7 @@ $ git clone https://github.com/ctrlfagency/VocalRecognition.git ctrlfagency
 └── tree.txt
 
 22 directories, 27 files
-
+```
 ## Copyleft
 Thibaut LOMBARD.
 
