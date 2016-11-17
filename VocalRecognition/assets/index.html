@@ -24,6 +24,7 @@ $(function(){
 	var widthh = (Number(screen.width));
 	var textcontainer = $('#afficheletexte');
 	textcontainer.html('<div id="contenu" style="<br> Dimensions de l\'écran : height: '+heightt+'px; width: '+widthh+'px;"> '+heightt+'px; width: '+widthh+'px; Chargé automatiquement au démarrage de l\'application.</div>');
+});// fin de fonction document ready
     function fonctionjs(tag)
 								{
 								var tag = 	tag;
@@ -34,9 +35,7 @@ $(function(){
 								texteaafficher = '<div id="contenu" style="height: '+heightt+'px; width: '+widthh+'px;">Texte chargé dynamiquement :  '+tag+' <br>Dimensions de l\'écran'+heightt+'px; width: '+widthh+' Chargé dynamiquement à l\'aide de l\'api speechtotext</div>';
 								textcontainer.html(texteaafficher);
 								}
-});// fin de fonction document ready
 </script>
-<div id="afficheletexte"></div>
 </body>
 </html>
 
