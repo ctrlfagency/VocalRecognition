@@ -61,6 +61,9 @@ $ git clone https://github.com/ctrlfagency/VocalRecognition.git ctrlfagency
 
 22 directories, 27 files
 ```
+## Tutorial In French
+* [tutorial-french] is the french tutorial regarding WebView Speech2Text Implementation (by me).
+
 ## Copyleft
 Thibaut LOMBARD.
 
@@ -70,4 +73,5 @@ Feel free to contact me for a partnership, i am currently open to most of coding
 
 [comment]: #
    [ctrlfagency.com]: <https://ctrlfagency.com>
+   [tutorial-french]: <https://blog.thibautlombard.space/speechtotext-webview-android>
   
