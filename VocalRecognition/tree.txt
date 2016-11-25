@@ -1,5 +1,6 @@
 .
 ├── AndroidManifest.xml
+├── app.apk
 ├── assets
 │   ├── index.html
 │   └── jquery.min.js
@@ -47,6 +48,7 @@
 │   │   └── styles.xml
 │   └── values-w820dp
 │       └── dimens.xml
+├── screen.png
 └── tree.txt
 
-22 directories, 27 files
+22 directories, 29 files
