@@ -3,7 +3,7 @@
 // License 	: GNU - GPL3
 // Author 	: Thibaut Marie Pierre LOMBARD  
 // Contact	: contact@ctrlfagency.com
-var VocalR_obj = null;
+//var VocalR_obj = null;
 
 			function VocalR_recognize(commandesvocales){
 					var laphrase = commandesvocales;
@@ -38,10 +38,8 @@ var VocalR_obj = null;
 									var trouve_fonction = window[fonction_a_executer];
 									// Dernière vérification si c'est un objet ou une fonction
 									// Execute la fonction
-									if (typeof trouve_fonction === "function") {
-										trouve_fonction()
-															};
-													} else { console.log(" Pas de terme matchés sans searchtag dans cet essai!");}
+									if (typeof trouve_fonction === "function") {trouve_fonction();};
+													} else { console.log(" Pas de termes simples trouvés dans cet essai!");}
 							
 										} // Fin de la vérification que nous ne sommes PAS dans
 										  // la sous-catégorie de l'objet
@@ -64,20 +62,17 @@ var VocalR_obj = null;
 
 									var searchtag = segmentemotcle[1].replace(/['";:,.\/?\\-]/g, ''); 
 									var fonction_a_executer = key.toString(); 
-									console.log(val_S + " est contenu dans la phrase : " + cleanlaphrase +", on exécute la fonction : "+fonction_a_executer+" avec le searchtag ="+searchtag);
+									console.log(val_S + " est dans la phrase : " + cleanlaphrase +", on exécute la fonction : "+fonction_a_executer+", searchtag="+searchtag);
 									// Retrouve l'objet fontion dans la page
 									var trouve_fonction = window[fonction_a_executer];
 									// Dernière vérification si c'est un objet ou une fonction
 									// Execute la fonction
 									if (typeof trouve_fonction === "function") trouve_fonction(searchtag);
-								} 	
+											} else { console.log("Pas de terme avec searchtag trouvés dans cet essai!");}
 									// Fin de la vérification 
 									// Que les termes VocalR_obj_functions_S correspondent
 									// Que le / les termes suivants sont existants et définis
 							
-							//} // Fin de la fonction de vérification du sous-objet typeof val_S
-
-
 						} // Fin de boucle for
 					
 			}
@@ -95,6 +90,7 @@ var VocalR_obj = null;
 					// Créé l'objet de reconnaissance vocale
 					VocalR_obj = new speechRecognition();
 					// Configure l'enregistrement continu de VocalR_obj, configurer à false pour l'utiliser une seule fois.
+					// L'option continuous n'est pas implémenté à Gecko à ce jour, désactiver là si vous utilisez firefox..
 					VocalR_obj.continuous = true;
 					// Configure le langage (format : BCP 47 -> http://www.rfc-editor.org/bcp/bcp47.txt).
 					VocalR_obj.lang = "fr-FR";
@@ -125,7 +121,6 @@ var VocalR_obj = null;
 						  // Utilise trim() pour ôter les espaces inutiles.
 						  commandesvocales = resultatsVocalR[z].trim();
 						  console.log('Reconnaissance Vocale: '+commandesvocales);
-						  VocalR_recognize(commandesvocales);
 						}
 						VocalR_recognize(commandesvocales);
 
@@ -134,7 +129,8 @@ var VocalR_obj = null;
 					// S'arrête dès lors que la reconnaissance vocale est arrêtée manuellement
 					// ou lorsque l'utilisateur s'arrête de parler.
 					VocalR_obj.onend = function(){
-						VocalR_obj = null;
+						// Pour désactiver l'écoute continuous décommentez la ligne suivante
+						//VocalR_obj = null;
 						console.log("API de reconnaisance vocale arrêté...");
 						VocalR_obj.start();
 					}
@@ -147,7 +143,7 @@ var VocalR_obj = null;
 			{
 				if(VocalR_obj != null)
 				{
-					// Stop manuellement
+					// Stop 
 					VocalR_obj.stop();
 					console.log("Reconnaissance Vocale arrêtée par l'utilisateur.");
 				}
