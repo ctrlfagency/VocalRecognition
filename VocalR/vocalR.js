@@ -126,7 +126,7 @@
 
 					}
 
-					// S'arrête dès lors que la reconnaissance vocale est arrêtée manuellement
+					// S'arrête dès lors que la reconnaissance vocale est arrêtée manuellement avec VocalR_obj.stop()
 					// ou lorsque l'utilisateur s'arrête de parler.
 					VocalR_obj.onend = function(){
 						// Pour désactiver l'écoute continuous décommentez la ligne suivante
@@ -143,7 +143,8 @@
 			{
 				if(VocalR_obj != null)
 				{
-					// Stop 
+					// Stop (aggressivement) en supprimant l'objet
+					VocalR_obj.onend = function(){ delete VocalR_obj;};
 					VocalR_obj.stop();
 					console.log("Reconnaissance Vocale arrêtée par l'utilisateur.");
 				}
