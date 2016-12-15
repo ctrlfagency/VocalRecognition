@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Speech Recognition API - VocalR Demo</title>
+			<script src="vocalR.js"></script>
+			<script type="text/javascript">
+			////////////////////////////////////////////////////
+			function bonjour () 	{
+					alert("Tout va bien ?");
+						};
+			function tqui (searchtag) 	{
+					dit_qui = searchtag.split(" ");
+					alert('bonjour '+dit_qui[0]);
+						};
+			////////////////////////////////////////////////////
+
+			var VocalR_obj_functions = {
+				bonjour:  "bonjour ",
+				VocalR_obj_functions_S : { 
+					tqui:	"je suis "
+									}
+								};
+
+			////////////////////////////////////////////////////
+		</script>
+	</head>
+	<body>
+		<button onclick="recognize(VocalR_obj_functions);">Démarrer la reconnaissance</button>
+		<button onclick="stop();">Stopper la reconnaissance</button>
+	</body>
+</html>
