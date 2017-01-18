@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title>VocalR Speech-To-Text Javascript Library - Thibaut Marie Pierre LOMBARD, GNU GPL3 License.</title>
+			<script src="vocalR.js"></script>
+			<script type="text/javascript">
+			window.onload=recognize(VocalR_obj_functions);
+			////////////////////////////////////////////////////
+			function bonjour () 	{
+					alert("و عليكم السلام");
+						};
+			function tqui (searchtag){
+					dit_qui = searchtag.split(" ");
+					alert('مرحبا '+dit_qui[0]);
+						};
+			////////////////////////////////////////////////////
+			var VocalR_obj_functions = {
+				bonjour:  	"السلام عليكم",
+				stop:			"قاف",
+				VocalR_obj_functions_S : { 
+					tqui:	"اسمي "
+									}
+								};
+			////////////////////////////////////////////////////
+		</script>
+	</head>
+	<body>
+		<p>Les commandes vocales sont les suivantes :
+		<ul>
+			<li>Dire "السلام عليكم"	</li>
+			<li>Dire "اسمي " puis votre prénom ...</li>
+			<li>Dire "قاف" pour stopper la reconaissance vocale</li>
+		</ul>
+		Astuces : Pressez F12 pour débugger.</p>
+	</body>
+</html>
