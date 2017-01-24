@@ -33,7 +33,7 @@ and add them into the  VocalR_obj_functions.
 ```sh
 			var VocalR_obj_functions = {
 				bonjour:  	"السلام عليكم",
-				stop:			"قاف",
+				stop:			"قف",
 				VocalR_obj_functions_S : { 
 					tqui:	"اسمي "
 									}
